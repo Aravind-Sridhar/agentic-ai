@@ -25,8 +25,9 @@ financial_agent = Agent(
 )
 
 multi_ai_agent = Agent(
+    model = Groq(id='llama-3.1-8b-instant'),
     team=[web_search_agent,financial_agent],
     instructions = ["Ensure to include sources","Format your response using markdown and use tables to display data where possible."] 
  )
 
-multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for NVDA",stream=True)
+multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for Microsoft",stream=True)
